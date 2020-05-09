@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <title>GifTastic</title>
+    <!--Link to bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <!--Link to jQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!--Link to stylesheet-->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+<div class = "container">
+    
+    <h1>GifTastic app</h1>
+
+    <!--Rendered buttons get dumped here-->
+    <div id = "buttons-view"></div>
+
+    <form id="category-form">
+        <label for="category-input">Add a video game!</label>
+        <input type="text" id="category-input"><br>
+
+        <!--This button will trigger new gif options to be added-->
+        <input id="add-category" type="submit" value="Add a video game!">
+    </form>
+
+    <!--Gifs will get dumped here-->
+    <div id="category-view"></div>
+
+</div>
+
+<!--Link to JavaScript code-->
+<script src = "assets/javascript/app.js"></script>
+
+</body>
+
+</html>
