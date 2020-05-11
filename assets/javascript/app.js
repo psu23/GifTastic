@@ -57,6 +57,8 @@ function renderButtons() {
 
         a.addClass("game");
 
+        a.addClass("btn btn-primary");
+
         a.attr("data-name", games[i]);
 
         a.text(games[i]);
@@ -85,11 +87,11 @@ $(document).on("click", ".gif", function() {
         $(this).attr("src", $(this).attr("data-animate"));
         $(this).attr("data-state", "animate");
         console.log($(this).attr("data-state"));
-
     }
 
     else if (state === "animate") {
         $(this).attr("src", $(this).attr("data-still"));
+        console.log("data-still");
         $(this).attr("data-state", "still");
     }
 

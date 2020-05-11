@@ -7,10 +7,16 @@ h1 {
     padding-top: 20px;
     padding-bottom: 20px;
     text-align: center;
+    font-family: 'Arvo', serif;
+    font-size: 50px;
 }
 
 .buttons-div {
     margin-bottom: 20px;
+}
+
+#game-form {
+    text-align: center;
 }
 
 button, img {
@@ -25,4 +31,33 @@ button, img {
 .gif {
     max-height: 150px;
     margin: 5px;
+}
+
+.container {
+    margin: 0px;
+}
+
+
+@media screen and (max-width: 980px) {
+
+}
+
+
+
+@media screen and (max-width: 768px) {
+
+}
+
+
+
+@media screen and (max-width: 640px) {
+      .gif {
+          max-width: 500px;
+          max-height: 500px;
+      }
+
+      .gif-and-rating {
+        float: none;
+        text-align: center;
+    }
 }
