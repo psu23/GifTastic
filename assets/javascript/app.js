@@ -1,7 +1,7 @@
 //add document.ready
 var topics = ["games"];//more topics should be added here
 
-var games = ["Silent Hill", "Resident Evil 4", "Dead Space", "Layers of Fear", "Until Dawn", "Fatal Frame", "Resident Evil 2", "Resident Evil 3", "Silent Hill 2", "Alien Isolation"];
+var games = ["Silent Hill", "Resident Evil", "Dead Space", "Fallout", "Death Stranding", "Fatal Frame", "Final Fantasy", "Animal Crossing", "Metal Gear Solid", "Apex"];
 
 function displayGifs() {
 
@@ -22,10 +22,12 @@ function displayGifs() {
         for (var i = 0; i < 10; i++){
             
             var gifDiv = $("<div>");
+            gifDiv.attr("class", "gif-and-rating");
 
             var rating = results[i].rating;
 
             var p = $("<p>").text("Rating: " + rating);
+            p.attr("class", "rating-text");
 
             var gameGif = $("<img>");
             gameGif.attr("src", results[i].images.fixed_height_still.url);
@@ -37,7 +39,9 @@ function displayGifs() {
             gifDiv.append(gameGif);
             gifDiv.append(p);
 
+            // $(gifDiv).css('float','left');//float can be assigned without separate stylesheet
             $("#games-view").prepend(gifDiv);
+            
         }
 
     });

@@ -1,0 +1,28 @@
+.wrapper {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+h1 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+.buttons-div {
+    margin-bottom: 20px;
+}
+
+button, img {
+    cursor: pointer;
+    margin: 1px;
+}
+
+.gif-and-rating {
+    float: left;
+}
+
+.gif {
+    max-height: 150px;
+    margin: 5px;
+}
