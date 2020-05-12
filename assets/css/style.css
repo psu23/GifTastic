@@ -1,5 +1,6 @@
 body {
     font-family: 'Arvo', serif;
+    background: #a2cefc;
 }
 
 .wrapper {
@@ -12,6 +13,13 @@ h1 {
     padding-bottom: 20px;
     text-align: center;
     font-size: 50px;
+    color: #002b58;
+}
+
+h2 {
+    font-size: 18px;
+    color: white;
+    text-align: center;
 }
 
 .buttons-div {
@@ -35,19 +43,22 @@ button, img {
     float: left;
 }
 
+.rating-text {
+    color: #dae7f8;
+}
+
 .gif {
     max-height: 150px;
     margin: 5px;
 }
 
-.container {
-    margin: 0px;
-    text-align: center;
-    outline: solid 2px black;
-}
-
 .fav-button { 
     margin-left: 10px;
+}
+
+.favorite-container {
+    border: 5px solid #007bff;
+    background: #d3e7fc;
 }
 
 

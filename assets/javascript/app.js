@@ -1,9 +1,13 @@
 $(document).ready(function () {
+
     var topics = ["games"];
+
+    var favoriteChosen = false;//will be triggered to true when first favorite is chosen, 
+    //to generate an outer div with a border to hold the favorites.
 
     var games = ["Silent Hill", "Resident Evil", "Dead Space", "Fallout", "Death Stranding", "Fatal Frame", "Final Fantasy", "Animal Crossing", "Metal Gear Solid", "Apex"];
 
-    function displayGifs() {
+    function displayGifs() {//this function is triggered when a button of a theme is clicked
 
         var game = $(this).attr("data-name");
         var apiKey = "hObEDaRGHCg6J0PmD7ph9yeDk0t4iH8b";
@@ -16,7 +20,7 @@ $(document).ready(function () {
 
             var results = response.data;
 
-            for (var i = 0; i < 10; i++) {
+            for (var i = 0; i < 10; i++) {//10 gifs are generated
 
                 var gifDiv = $("<div>");
                 gifDiv.attr("class", "gif-and-rating");
@@ -26,19 +30,19 @@ $(document).ready(function () {
                 var p = $("<p>").text("Rating: " + rating);
                 p.attr("class", "rating-text");
 
-                var gameGif = $("<img>");
+                var gameGif = $("<img>");//create an img with several options for gifs, including still and animated
                 gameGif.attr("src", results[i].images.fixed_height_still.url);
                 gameGif.attr("data-still", results[i].images.fixed_height_still.url);
                 gameGif.attr("data-animate", results[i].images.fixed_height.url);
-                gameGif.attr("data-state", "still");
+                gameGif.attr("data-state", "still");//set data-state to still so that it can later be triggered to animate when tapped
                 gameGif.attr("class", "gif");
 
-                var favButton = $("<button>");
-                favButton.attr("class", "fav-button");
-                favButton.attr("src", results[i].images.fixed_height_still.url);
+                var favButton = $("<button>");//add a button so users can save favorites
+                favButton.attr("class", "fav-button btn btn-secondary");//button will have all of the information of the image it represents
+                favButton.attr("src", results[i].images.fixed_height_still.url);//this way it can be generate the image later when tapped
                 favButton.attr("data-still", results[i].images.fixed_height_still.url);
                 favButton.attr("data-animate", results[i].images.fixed_height.url);
-                favButton.text("\u2605");
+                favButton.text("\u2605");//star symbol
 
                 gifDiv.append(gameGif);
                 gifDiv.append(p);
@@ -54,7 +58,7 @@ $(document).ready(function () {
         });
     }
 
-    function renderButtons() {
+    function renderButtons() {//renders buttons of intial array
 
         $("#buttons-view").empty();
 
@@ -74,29 +78,29 @@ $(document).ready(function () {
         }
     }
 
-    $("#add-game").on("click", function (e) {
+    $("#add-game").on("click", function (e) {//takes user input of added theme, pushes it to category array
         e.preventDefault();
 
         var game = $("#game-input").val().trim();
 
         games.push(game);
 
-        renderButtons();
+        renderButtons();// new buttons are generated
     });
 
-    $(document).on("click", ".game", displayGifs);
+    $(document).on("click", ".game", displayGifs);//when a button on top is clicked, gifs are generated
 
-    $(document).on("click", ".gif", function () {
+    $(document).on("click", ".gif", function () {//when any gif is clicked..
 
-        var state = $(this).attr("data-state");
+        var state = $(this).attr("data-state");//its current state is recorded
 
-        if (state === "still") {
+        if (state === "still") {//if it is in a state of still before the click, its src will be changed to the animated version
             $(this).attr("src", $(this).attr("data-animate"));
             $(this).attr("data-state", "animate");
             console.log($(this).attr("data-state"));
         }
 
-        else if (state === "animate") {
+        else if (state === "animate") {//and vice-versa
             $(this).attr("src", $(this).attr("data-still"));
             console.log("data-still");
             $(this).attr("data-state", "still");
@@ -104,15 +108,20 @@ $(document).ready(function () {
 
     });
 
-    renderButtons();
-
-    $(document).on("click", "#title", function () {
+    $(document).on("click", "#title", function () {//page reloads when title is clicked
         location.reload();
     });
 
-    $(document).on("click", ".fav-button", function () {
+    $(document).on("click", ".fav-button", function () {//when favorite (star) button is clicked..
 
-        var gifDiv = $("<div>");
+        if (favoriteChosen === false) {//upon the first favorite being added
+            $("#favorite-gifs").wrap( "<div class='favorite-container'></div>" );
+            favoriteChosen = true;
+        }//a new div is created to wrap the existing favorite-gifs div, in order to create a border
+        //that does not initally appear on the page, until a favorite is chosen
+
+
+        var gifDiv = $("<div>");//the gif is generated based on the information stored in the button
         gifDiv.attr("class", "favorited-gif");
 
         var gameGif = $("<img>");
@@ -124,10 +133,12 @@ $(document).ready(function () {
 
         gifDiv.append(gameGif);
 
-        $("#favorite-gifs").prepend(gifDiv);
+        $("#favorite-gifs").prepend(gifDiv);//add to favorite gifs div, above the generated gifs
 
         gifDiv.css("display", "inline");
 
     });
+
+    renderButtons();//buttons are rendered upon opening page
 
 });

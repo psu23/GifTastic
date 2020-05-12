@@ -30,13 +30,19 @@
         </div>
 
         <div class="input-group mb-3">
-            <input type="text" id="game-input" class="form-control" placeholder="tap a theme above or add a new one!" aria-label="add" aria-describedby="basic-addon2">
+            <input type="text" id="game-input" class="form-control" placeholder="Add a new theme!" aria-label="add" aria-describedby="basic-addon2">
             <div class="input-group-append">
-              <button class="btn btn-outline-secondary" id="add-game" type="button">add</button>
+              <button class="btn btn-primary" id="add-game" type="button">add</button>
             </div>
         </div>
 
-        <div id="favorite-gifs"></div>
+        <div class="instructions">
+            <h2>Click the button of a theme above to see gifs. Tap the gifs to animate them. Save favorites by tapping the &#9733; below a gif.</h2>
+        </div>
+
+
+        <div id="favorite-gifs"></div><!--jQuery will wrap this div in a 
+            div to provide a border once favorite gifs are chosen by user-->
 
         <!--Gifs will get dumped here-->
         <div class = "container">
