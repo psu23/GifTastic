@@ -1,3 +1,7 @@
+body {
+    font-family: 'Arvo', serif;
+}
+
 .wrapper {
     margin-left: 10px;
     margin-right: 10px;
@@ -7,7 +11,6 @@ h1 {
     padding-top: 20px;
     padding-bottom: 20px;
     text-align: center;
-    font-family: 'Arvo', serif;
     font-size: 50px;
 }
 
@@ -15,13 +18,17 @@ h1 {
     margin-bottom: 20px;
 }
 
-#game-form {
+#game-form, #favorite-gifs, .container {
     text-align: center;
 }
 
 button, img {
     cursor: pointer;
     margin: 1px;
+}
+
+#title {
+    cursor: pointer;
 }
 
 .gif-and-rating {
@@ -35,6 +42,12 @@ button, img {
 
 .container {
     margin: 0px;
+    text-align: center;
+    outline: solid 2px black;
+}
+
+.fav-button { 
+    margin-left: 10px;
 }
 
 
@@ -45,7 +58,10 @@ button, img {
 
 
 @media screen and (max-width: 768px) {
-
+    .gif {
+        max-width: 700px;
+        max-height: 700px;
+    }
 }
 
 
@@ -57,7 +73,10 @@ button, img {
       }
 
       .gif-and-rating {
-        float: none;
+        text-align: center;
+    }
+
+    .generated-gifs {
         text-align: center;
     }
 }
