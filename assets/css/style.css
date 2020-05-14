@@ -57,8 +57,8 @@ button, img {
 }
 
 .favorite-container {
-    border: 5px solid #007bff;
-    background: #d3e7fc;
+    border: 5px solid #ccb800;
+    background: rgb(255, 253, 238);
 }
 
 
