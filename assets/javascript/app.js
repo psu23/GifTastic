@@ -11,7 +11,7 @@ $(document).ready(function () {
 
         var game = $(this).attr("data-name");
         var apiKey = "hObEDaRGHCg6J0PmD7ph9yeDk0t4iH8b";
-        var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + game + "&limit=10&rating=r&api_key=" + apiKey;
+        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + game + "&limit=10&rating=r&api_key=" + apiKey;
 
         $.ajax({
             url: queryURL,
