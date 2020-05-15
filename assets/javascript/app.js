@@ -108,7 +108,7 @@ $(document).ready(function () {
 
     });
 
-    $(document).on("click", "#title", function () {//page reloads when title is clicked
+    $(document).on("click", "h1", function () {//page reloads when title is clicked
         location.reload();
     });
 
