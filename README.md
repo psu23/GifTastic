@@ -3,8 +3,6 @@
 ## Deployed site:
 ## https://psu23.github.io/GifTastic/
 
-# GifTastic
-
 ### Overview
 
 In this application, the GIPHY API was  to make a dynamic web page that populates with gifs of your choice.
